@@ -16,6 +16,11 @@ plugin_map_checkout=${plugin_map_checkout:-244d1cfa21fcb0010c2192da5b41400fb7e9f
 plugin_staticpages_checkout=${plugin_staticpages_checkout:-b5233dde24d8f5e26d60d522e924ba2835eea141}
 oregononi_checkout=${oregononi_checkout:-1b754d3c705f098ac02b129edf1c66e97f2868ca}
 
+force=0
+if [[ ${1:-} == "--force" ]]; then
+  force=1
+fi
+
 # Runs a command with an attempt at more graceful error handling than we'd get
 # otherwise; git spews all its output to STDERR even when everything is
 # successful.
@@ -56,15 +61,25 @@ checkout() {
     return
   fi
 
-  # Don't modify stuff that's already there so dev can happen
-  if [[ -d $destination ]]; then
-    echo "Cowardly refusing to modify existing directory"
-    echo "If you really want to re-sync this repository, remove $(pwd)/$destination and re-run"
-    return
+  if [[ ! -d $destination ]]; then
+    # Destination doesn't exist; just clone it
+    echo -n "  Cloning $group/$project.git: "
+    run_git_command clone git@github.com:$group/$project.git $destination
+  else
+    # Destination exists; behavior depends on $force value
+    if [[ $force == 1 ]]; then
+      # Force: fetch just in case the sha/tag/branch is new
+      pushd . >/dev/null
+      echo -n "  Fetching repository for forced sync: "
+      cd $destination
+      run_git_command fetch --prune
+      popd >/dev/null
+    else
+      # Don't force: let user know we aren't modifying the contents of $destination
+      echo "  Cowardly refusing to modify existing directory; use --force if you really want this"
+      return
+    fi
   fi
-
-  echo -n "  Cloning $group/$project.git: "
-  run_git_command clone git@github.com:$group/$project.git $destination
 
   pushd . >/dev/null
   cd $destination
