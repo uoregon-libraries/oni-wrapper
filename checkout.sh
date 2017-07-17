@@ -11,9 +11,9 @@ set -eu
 #
 # TODO: Use tags here so it's clearer what's going on when stuff changes!
 openoni_checkout=${openoni_checkout:-866893255947f8f09969575768e2e1ff673f1aeb}
-plugin_featured_content_checkout=${plugin_featured_content_checkout:-9c9a2cf31ecc0be90be9dbe7561c425975d5a695}
+plugin_featured_content_checkout=${plugin_featured_content_checkout:-bf918971d3204e3045d2e3b16393dcba48d71929}
 plugin_map_checkout=${plugin_map_checkout:-244d1cfa21fcb0010c2192da5b41400fb7e9f238}
-plugin_staticpages_checkout=${plugin_staticpages_checkout:-b5233dde24d8f5e26d60d522e924ba2835eea141}
+plugin_staticpages_checkout=${plugin_staticpages_checkout:-v1.0.0}
 oregononi_checkout=${oregononi_checkout:-1b754d3c705f098ac02b129edf1c66e97f2868ca}
 
 force=0
