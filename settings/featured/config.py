@@ -11,7 +11,7 @@ MINYEAR = 1800
 MAXYEAR = 1950
 
 # The number of results that will be displayed
-NUMBER = 4
+NUMBER = 1
 
 # Specific featured pages to display
 PAGES = ()
