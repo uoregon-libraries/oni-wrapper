@@ -93,16 +93,16 @@ get_oni_plugin() {
   checkout open-oni plugin_$plugin $plugin
 }
 
-checkout open-oni open-oni oni
+checkout open-oni open-oni open-oni
 
 pushd . >/dev/null
-cd oni/onisite/plugins
+cd open-oni/onisite/plugins
 get_oni_plugin featured_content
 get_oni_plugin map
 get_oni_plugin staticpages
 popd >/dev/null
 
 pushd . >/dev/null
-cd oni/themes
+cd open-oni/themes
 checkout uoregon-libraries oregon-oni oregon
 popd >/dev/null
