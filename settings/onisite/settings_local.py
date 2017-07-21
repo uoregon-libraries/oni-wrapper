@@ -21,3 +21,5 @@ INSTALLED_APPS = (
     # These should come last so static pages can't accidentally override theme/core pages
     'onisite.plugins.staticpages',
 )
+
+STATIC_PAGES_PATH="/opt/openoni/themes/oregon/staticpages"
