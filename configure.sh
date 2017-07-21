@@ -23,6 +23,6 @@ copyfile() {
   fi
 }
 
-copyfile settings/onisite/urls.py oni/onisite/urls.py
-copyfile settings/onisite/settings_local.py oni/onisite/settings_local.py
-copyfile settings/featured/config.py oni/onisite/plugins/featured_content/config.py
+copyfile settings/onisite/urls.py open-oni/onisite/urls.py
+copyfile settings/onisite/settings_local.py open-oni/onisite/settings_local.py
+copyfile settings/featured/config.py open-oni/onisite/plugins/featured_content/config.py
