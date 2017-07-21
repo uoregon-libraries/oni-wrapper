@@ -22,4 +22,4 @@ INSTALLED_APPS = (
     'onisite.plugins.staticpages',
 )
 
-STATIC_PAGES_PATH="/opt/openoni/themes/oregon/staticpages"
+STATIC_PAGES_PATH="/opt/openoni/themes/oregon/pages"
