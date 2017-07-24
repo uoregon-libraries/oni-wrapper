@@ -10,10 +10,10 @@ set -eu
 # rather than editing this file.
 #
 # TODO: Use tags here so it's clearer what's going on when stuff changes!
-openoni_checkout=${openoni_checkout:-866893255947f8f09969575768e2e1ff673f1aeb}
+openoni_checkout=${openoni_checkout:-v0.1.0}
 plugin_featured_content_checkout=${plugin_featured_content_checkout:-bf918971d3204e3045d2e3b16393dcba48d71929}
-plugin_map_checkout=${plugin_map_checkout:-67adbcf}
-plugin_staticpages_checkout=${plugin_staticpages_checkout:-v1.1.0}
+plugin_map_checkout=${plugin_map_checkout:-v0.1.0}
+plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.1}
 oregononi_checkout=${oregononi_checkout:-47fb299}
 
 force=0
