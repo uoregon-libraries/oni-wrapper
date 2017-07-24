@@ -11,7 +11,7 @@ set -eu
 #
 # TODO: Use tags here so it's clearer what's going on when stuff changes!
 openoni_checkout=${openoni_checkout:-v0.1.0}
-plugin_featured_content_checkout=${plugin_featured_content_checkout:-bf918971d3204e3045d2e3b16393dcba48d71929}
+plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.1.0}
 plugin_map_checkout=${plugin_map_checkout:-v0.1.0}
 plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.1}
 oregononi_checkout=${oregononi_checkout:-master}
