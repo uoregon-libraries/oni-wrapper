@@ -23,3 +23,4 @@ INSTALLED_APPS = (
 )
 
 STATIC_PAGES_PATH="/opt/openoni/themes/oregon/pages"
+TIME_ZONE = 'America/Los_Angeles'
