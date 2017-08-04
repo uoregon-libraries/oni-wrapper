@@ -5,7 +5,7 @@ DEBUG = True
 
 BASE_URL="http://example.com"
 #LOG_LOCATION = "/tmp"
-MARC_RETRIEVAL_URLFORMAT = "https://raw.githubusercontent.com/open-oni/marc-mirror/master/marc/%s/marc.xml"
+MARC_RETRIEVAL_URLFORMAT = "https://raw.githubusercontent.com/open-oni/marc-mirror/uo-marc/marc/%s/marc.xml"
 
 INSTALLED_APPS = (
     'django.contrib.humanize',
