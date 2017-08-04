@@ -1,7 +1,8 @@
 SITE_TITLE = "Historic Oregon Newspapers"
 PROJECT_NAME = "Oregon Digital Newspapers Initiative"
 
-DEBUG = True
+DEBUG = False
+IS_PRODUCTION = True
 
 BASE_URL="http://example.com"
 #LOG_LOCATION = "/tmp"
