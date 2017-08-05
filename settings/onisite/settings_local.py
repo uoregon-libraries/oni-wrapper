@@ -1,3 +1,5 @@
+import os
+
 SITE_TITLE = "Historic Oregon Newspapers"
 PROJECT_NAME = "Oregon Digital Newspapers Initiative"
 
@@ -25,3 +27,19 @@ INSTALLED_APPS = (
 
 STATIC_PAGES_PATH="/opt/openoni/themes/oregon/pages"
 TIME_ZONE = 'America/Los_Angeles'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
