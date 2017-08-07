@@ -1,8 +1,8 @@
 # Set to True to use random pages instead of curated selections in PAGES
-RANDOM = True
+RANDOM = False
 
 # Set to True to enable the 'This day in history' function
-THISDAY = False
+THISDAY = True
 
 # Set to earliest year to search with THISDAY
 MINYEAR = 1800
