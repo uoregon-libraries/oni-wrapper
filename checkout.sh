@@ -11,7 +11,7 @@ set -eu
 openoni_checkout=${openoni_checkout:-v0.2.0}
 plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.2.0}
 plugin_map_checkout=${plugin_map_checkout:-v0.1.0}
-plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.1}
+plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.2}
 oregononi_checkout=${oregononi_checkout:-master}
 
 force=0
