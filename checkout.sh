@@ -62,7 +62,9 @@ checkout() {
   if [[ ! -d $destination ]]; then
     # Destination doesn't exist; just clone it
     echo -n "  Cloning $group/$project.git: "
-    run_git_command clone git@github.com:$group/$project.git $destination
+    # Try to pull as git@github.com first, so a dev has an easy time; fall back to https if the first clone fails
+    run_git_command clone git@github.com:$group/$project.git $destination || \
+      run_git_command clone https://github.com/$group/$project.git $destination
   else
     # Destination exists; behavior depends on $force value
     if [[ $force == 1 ]]; then
