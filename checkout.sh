@@ -62,9 +62,13 @@ checkout() {
   if [[ ! -d $destination ]]; then
     # Destination doesn't exist; just clone it
     echo -n "  Cloning $group/$project.git: "
-    # Try to pull as git@github.com first, so a dev has an easy time; fall back to https if the first clone fails
-    run_git_command clone git@github.com:$group/$project.git $destination || \
-      run_git_command clone https://github.com/$group/$project.git $destination
+    # If servername is oregonnews*, don't try to clone as a privileged user
+    proto="git@github.com:"
+    hn=$(hostname)
+    if [[ ${hn:0:10} == "oregonnews" ]]; then
+      proto="https://github.com/"
+    fi
+    run_git_command clone $proto$group/$project.git $destination
   else
     # Destination exists; behavior depends on $force value
     if [[ $force == 1 ]]; then
