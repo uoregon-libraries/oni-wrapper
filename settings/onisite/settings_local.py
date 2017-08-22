@@ -6,7 +6,6 @@ PROJECT_NAME = "Oregon Digital Newspapers Initiative"
 DEBUG = False
 IS_PRODUCTION = True
 
-#LOG_LOCATION = "/tmp"
 MARC_RETRIEVAL_URLFORMAT = "https://raw.githubusercontent.com/open-oni/marc-mirror/uo-marc/marc/%s/marc.xml"
 
 INSTALLED_APPS = (
