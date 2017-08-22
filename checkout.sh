@@ -12,6 +12,7 @@ openoni_checkout=${openoni_checkout:-v0.2.2}
 plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.2.0}
 plugin_map_checkout=${plugin_map_checkout:-v0.1.0}
 plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.2}
+plugin_calendar=${plugin_calendar:-v0.1.0}
 oregononi_checkout=${oregononi_checkout:-master}
 
 force=0
@@ -104,6 +105,7 @@ cd open-oni/onisite/plugins
 get_oni_plugin featured_content
 get_oni_plugin map
 get_oni_plugin staticpages
+get_oni_plugin calendar
 popd >/dev/null
 
 pushd . >/dev/null

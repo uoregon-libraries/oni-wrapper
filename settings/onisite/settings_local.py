@@ -18,6 +18,7 @@ INSTALLED_APPS = (
 
     'onisite.plugins.featured_content',
     'onisite.plugins.map',
+    'onisite.plugins.calendar',
     'core',
 
     # These should come last so static pages can't accidentally override theme/core pages
