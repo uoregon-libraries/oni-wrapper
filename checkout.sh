@@ -9,7 +9,7 @@ set -eu
 # production.  Note that an env variable can be used for development work,
 # rather than editing this file.
 openoni_checkout=${openoni_checkout:-v0.2.2}
-plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.2.0}
+plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.3.0}
 plugin_map_checkout=${plugin_map_checkout:-v0.1.0}
 plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.2}
 plugin_calendar_checkout=${plugin_calendar_checkout:-v0.1.1}
