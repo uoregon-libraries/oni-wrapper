@@ -13,6 +13,7 @@ plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.3.0}
 plugin_map_checkout=${plugin_map_checkout:-v0.1.0}
 plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.2}
 plugin_calendar_checkout=${plugin_calendar_checkout:-v0.1.1}
+plugin_title_locations_checkout=${plugin_title_locations_checkout:-v0.1.0}
 oregononi_checkout=${oregononi_checkout:-master}
 
 force=0
@@ -106,6 +107,7 @@ get_oni_plugin featured_content
 get_oni_plugin map
 get_oni_plugin staticpages
 get_oni_plugin calendar
+get_oni_plugin title_locations
 popd >/dev/null
 
 pushd . >/dev/null
