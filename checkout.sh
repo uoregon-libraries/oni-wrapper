@@ -14,7 +14,9 @@ plugin_map_checkout=${plugin_map_checkout:-v0.1.0}
 plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.2}
 plugin_calendar_checkout=${plugin_calendar_checkout:-v0.2.0}
 plugin_title_locations_checkout=${plugin_title_locations_checkout:-v0.1.0}
-oregononi_checkout=${oregononi_checkout:-v1.3.0}
+
+# Since the theme is 100% ours, master can be assumed to always be safe to deploy
+oregononi_checkout=${oregononi_checkout:-master}
 
 force=0
 if [[ ${1:-} == "--force" ]]; then
