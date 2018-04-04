@@ -21,6 +21,44 @@ cd oni-wrapper
 You'll now have an `oni` directory with all the plugins and settings needed to
 run the site in production or development.
 
+Customize Branches
+---
+
+Each sub-project has a branch or tag name in `checkout.sh`, but they can be
+overridden via environment variables.  e.g.:
+
+    $ plugin_calendar_checkout=master ./checkout.sh
+
+    * Getting open-oni/open-oni cloned and checked out
+      Cloning open-oni/open-oni.git: Success
+      Checking out open-oni @ v0.10.0: Success
+
+    * Getting open-oni/plugin_featured_content cloned and checked out
+      Cloning open-oni/plugin_featured_content.git: Success
+      Checking out plugin_featured_content @ v0.3.0: Success
+
+    * Getting open-oni/plugin_map cloned and checked out
+      Cloning open-oni/plugin_map.git: Success
+      Checking out plugin_map @ v0.1.0: Success
+
+    * Getting open-oni/plugin_staticpages cloned and checked out
+      Cloning open-oni/plugin_staticpages.git: Success
+      Checking out plugin_staticpages @ v2.0.2: Success
+
+    * Getting open-oni/plugin_calendar cloned and checked out
+      Cloning open-oni/plugin_calendar.git: Success
+      Checking out plugin_calendar @ master: Success
+
+    * Getting open-oni/plugin_title_locations cloned and checked out
+      Cloning open-oni/plugin_title_locations.git: Success
+      Checking out plugin_title_locations @ v0.1.0: Success
+
+    * Getting uoregon-libraries/oregon-oni cloned and checked out
+      Cloning uoregon-libraries/oregon-oni.git: Success
+      Checking out oregon-oni @ master: Success
+
+This is particularly useful for testing a release branch prior to deployment.
+
 Development
 ---
 
@@ -30,6 +68,10 @@ If you want to do development, whether on ONI core, the Oregon theme, or any of
 the plugins, make sure you check out the appropriate branch first!  This
 wrapper checks out specific tags to ensure consistency, but you can't develop
 against a tag without creating a branch.
+
+You can use the information provided in the "Customize Branches" section, but
+it may be safer to explicitly check out a branch just on the relevant
+sub-project(s).
 
 e.g.:
 
