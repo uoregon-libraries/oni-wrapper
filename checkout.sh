@@ -74,6 +74,8 @@ checkout() {
     fi
     run_git_command clone $proto$group/$project.git $destination
   else
+    echo "  '$PWD/$destination' already exists"
+
     # Destination exists; behavior depends on $force value
     if [[ $force == 1 ]]; then
       # Force: fetch just in case the sha/tag/branch is new
