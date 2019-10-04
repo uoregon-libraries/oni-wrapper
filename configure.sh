@@ -17,12 +17,28 @@ copyfile() {
   fi
 
   if [[ -f $destination ]]; then
-    echo "Cowardly refusing to overwrite $destination; use --force if you really want this"
+    echo "  Cowardly refusing to overwrite $destination."
+    echo "  Use --force if you really want this."
   else
     cp $source $destination
   fi
 }
 
-copyfile settings/onisite/urls.py open-oni/onisite/urls.py
-copyfile settings/onisite/settings_local.py open-oni/onisite/settings_local.py
-copyfile settings/featured/config.py open-oni/onisite/plugins/featured_content/config.py
+dest=${1:-}
+if [[ $force == 1 ]]; then
+  dest=${2:-}
+fi
+
+dest=$(realpath $dest)
+
+if [[ $dest == "" ]]; then
+  echo "You must specify a destination path"
+  exit 1
+fi
+
+echo
+echo "* Copying configuration to $dest"
+
+copyfile settings/onisite/urls.py $dest/onisite/urls.py
+copyfile settings/onisite/settings_local.py $dest/onisite/settings_local.py
+copyfile settings/featured/config.py $dest/onisite/plugins/featured_content/config.py

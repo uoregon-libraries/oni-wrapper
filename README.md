@@ -15,10 +15,9 @@ To get a usable Oregon News setup:
 git clone git@github.com:uoregon-libraries/oni-wrapper.git
 cd oni-wrapper
 ./checkout.sh
-./configure.sh
 ```
 
-You'll now have an `oni` directory with all the plugins and settings needed to
+You'll now have an `open-oni` directory with all the plugins and settings needed to
 run the site in production or development.
 
 Customize Branches

@@ -74,7 +74,7 @@ checkout() {
     fi
     run_git_command clone $proto$group/$project.git $destination
   else
-    echo "  '$PWD/$destination' already exists"
+    echo "  '$destination' already exists"
 
     # Destination exists; behavior depends on $force value
     if [[ $force == 1 ]]; then
@@ -103,10 +103,18 @@ get_oni_plugin() {
   checkout open-oni plugin_$plugin $plugin
 }
 
-checkout open-oni open-oni open-oni
+dest=${1:-open-oni}
+if [[ $force == 1 ]]; then
+  dest=${2:-open-oni}
+fi
+dest=$(realpath $dest)
+
+echo "ONI code will be deployed to $dest"
+
+checkout open-oni open-oni $dest
 
 pushd . >/dev/null
-cd open-oni/onisite/plugins
+cd $dest/onisite/plugins
 get_oni_plugin featured_content
 get_oni_plugin map
 get_oni_plugin staticpages
@@ -115,6 +123,12 @@ get_oni_plugin title_locations
 popd >/dev/null
 
 pushd . >/dev/null
-cd open-oni/themes
+cd $dest/themes
 checkout uoregon-libraries oregon-oni oregon
 popd >/dev/null
+
+if [[ $force == 1 ]]; then
+  ./configure.sh --force $dest
+else
+  ./configure.sh $dest
+fi
