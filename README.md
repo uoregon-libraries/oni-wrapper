@@ -136,7 +136,9 @@ Setup
 Running the stack is fairly easy; just get your branches set up however you
 want, then `cd open-oni` and start docker normally (`docker-compose up -d web`,
 for instance).  Make sure you **set the environment variables specified above**
-in your `docker-compose.override.yml`!
+in your `docker-compose.override.yml`.  A helpful override is copied into
+`docker-comopse.override.yml-development` during the setup scripts; copying and
+modifying this may be more helpful than crafting one by hand.
 
 General info
 ---

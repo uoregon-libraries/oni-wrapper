@@ -1,0 +1,13 @@
+# This is a useful base override for using ONI for oregonnews development
+version: '2.1'
+services:
+  rdbms:
+    volumes:
+      - ./docker/mysql/:/etc/mysql/conf.d:Z
+  web:
+    volumes:
+      - /dev/null:/etc/openoni.ini
+    environment:
+      - ONI_DEBUG=1
+      - ONI_BASE_URL=http://localhost
+      - ONI_SECRET_KEY=foo
