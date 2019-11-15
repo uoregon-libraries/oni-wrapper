@@ -8,15 +8,13 @@ set -eu
 # experimenting, otherwise we risk creating an unstable codebase for
 # production.  Note that an env variable can be used for development work,
 # rather than editing this file.
-openoni_checkout=${openoni_checkout:-v0.10.0}
-plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.3.0}
-plugin_map_checkout=${plugin_map_checkout:-v0.1.0}
-plugin_staticpages_checkout=${plugin_staticpages_checkout:-v2.0.2}
-plugin_calendar_checkout=${plugin_calendar_checkout:-v0.2.0}
-plugin_title_locations_checkout=${plugin_title_locations_checkout:-v0.1.1}
-
-# Since the theme is 100% ours, master can be assumed to always be safe to deploy
-oregononi_checkout=${oregononi_checkout:-master}
+openoni_checkout=${openoni_checkout:-v0.12.0}
+plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.5.0}
+plugin_map_checkout=${plugin_map_checkout:-v0.3.0}
+plugin_staticpages_checkout=${plugin_staticpages_checkout:-v3.0.0}
+plugin_calendar_checkout=${plugin_calendar_checkout:-v0.4.0}
+plugin_title_locations_checkout=${plugin_title_locations_checkout:-v0.2.0}
+oregononi_checkout=${oregononi_checkout:-v2.0.0}
 
 force=0
 if [[ ${1:-} == "--force" ]]; then
