@@ -43,3 +43,4 @@ copyfile settings/onisite/urls.py $dest/onisite/urls.py
 copyfile settings/onisite/settings_local.py $dest/onisite/settings_local.py
 copyfile settings/featured/config.py $dest/onisite/plugins/featured_content/config.py
 copyfile settings/docker-compose.override.yml $dest/docker-compose.override.yml-development
+copyfile settings/calendar/config.py open-oni/onisite/plugins/calendar/config.py
