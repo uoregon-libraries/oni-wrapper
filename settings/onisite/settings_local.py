@@ -70,9 +70,11 @@ DATABASES = {
         'NAME':     os.getenv('ONI_DB_NAME', 'openoni'),
         'USER':     os.getenv('ONI_DB_USER', 'openoni'),
         'PASSWORD': os.getenv('ONI_DB_PASSWORD', 'openoni'),
+        'OPTIONS': { 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'" },
     }
 }
 
+SOLR_API = os.getenv('ONI_SOLR_API', 'http://solr:8983/api')
 SOLR = os.getenv('ONI_SOLR_URL', 'http://solr:8983/solr/openoni')
 SECRET_KEY = os.getenv("ONI_SECRET_KEY")
 
