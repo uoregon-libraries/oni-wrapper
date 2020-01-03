@@ -74,8 +74,7 @@ DATABASES = {
     }
 }
 
-SOLR_API = os.getenv('ONI_SOLR_API', 'http://solr:8983/api')
-SOLR = os.getenv('ONI_SOLR_URL', 'http://solr:8983/solr/openoni')
+SOLR_BASE_URL = os.getenv('ONI_SOLR_URL', 'http://solr:8983')
 SECRET_KEY = os.getenv("ONI_SECRET_KEY")
 
 # DEBUG defaults to false, and is only true if ONI_DEBUG is set to "1" to avoid
