@@ -1,6 +1,20 @@
 import os
 import urllib
 
+###
+# Custom stuff that doesn't exist in the core settings example
+###
+
+# Where the static pages live for the staticpages plugin
+STATIC_PAGES_PATH = "/opt/openoni/themes/oregon/pages"
+
+# Time zone - we don't go with the UTC default
+TIME_ZONE = 'America/Los_Angeles'
+
+###
+# Settings example, customized for us
+###
+
 # For initial customization, search and update values beginning with 'YOUR_'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -9,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # ENVIRONMENT SETTINGS
 ################################################################
 # BASE_URL can NOT include any path elements!
-BASE_URL = os.getenv('ONI_BASE_URL', 'http://localhost')
+BASE_URL = os.getenv("ONI_BASE_URL")
 url = urllib.parse.urlparse(BASE_URL)
 ALLOWED_HOSTS = [url.netloc]
 
@@ -19,7 +33,7 @@ if url.scheme == 'https':
     Test with a low value (e.g. 300)
     before setting a high value (e.g. 15552000) for long-term use
     """
-    SECURE_HSTS_SECONDS = int(os.getenv('ONI_HSTS_SECONDS', 0))
+    SECURE_HSTS_SECONDS = int(os.getenv('ONI_HSTS_SECONDS', 300))
 
 DATABASES = {
     'default': {
@@ -33,17 +47,23 @@ DATABASES = {
     }
 }
 
-DEBUG = True if os.getenv('ONI_DEBUG', 0) == '1' else False
+# DEBUG defaults to false, and is only true if ONI_DEBUG is set to "1" to avoid
+# any kind of accident putting production into debug mode
+DEBUG = False
+if os.getenv("ONI_DEBUG") == "1":
+    logging.getLogger(__name__).info("Enabling debug settings")
+    DEBUG = True
+
 
 # IIIF server public URL endpoint
 IIIF_URL = os.getenv('ONI_IIIF_URL', 'http://localhost/images/iiif')
 
-SECRET_KEY = os.getenv('ONI_SECRET_KEY', 'openoni')
+SECRET_KEY = os.getenv("ONI_SECRET_KEY")
 
 SOLR_BASE_URL = os.getenv('ONI_SOLR_URL', 'http://solr:8983')
 
 # Absolute path on disk to the data directory
-STORAGE = os.getenv('ONI_STORAGE_PATH', os.path.join(BASE_DIR, 'data'))
+STORAGE = os.getenv('ONI_STORAGE_PATH', '/opt/openoni/data/')
 
 """
 Django logging outputs in Apache logs by default.
@@ -82,21 +102,20 @@ CONN_MAX_AGE = 30
 # List of configuration classes / app packages in order of priority high to low.
 # The first item in the list has final say when collisions occur.
 INSTALLED_APPS = (
-    # Default
-    'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.humanize',
     'django.contrib.staticfiles',
 
-    # Humanize and local theme override all below
-    'django.contrib.humanize',  # Makes data more human-readable
-#    'themes.YOUR_THEME_NAME',
+    # Make sure oregon theme files override plugin and core pages
+    'themes.oregon',
 
-    # Plugins
-    # See https://github.com/open-oni?q=plugin for available plugins
-
-    # Open ONI
-    'themes.default',
+    'onisite.plugins.title_locations',
+    'onisite.plugins.featured_content',
+    'onisite.plugins.map',
+    'onisite.plugins.calendar',
     'core',
+
+    # These should come last so static pages can't accidentally override theme/core pages
+    'onisite.plugins.staticpages',
 )
 
 """
@@ -119,8 +138,12 @@ descriptions that will only show up occasionally.
 For example: 'Open ONI' for most headers, 'Open Online Newspapers Initiative'
 for introduction / about / further information / etc
 """
-SITE_TITLE = 'YOUR_SHORT_PROJECT_NAME'
-PROJECT_NAME = 'YOUR_LONG_PROJECT_NAME'
+SITE_TITLE = "Historic Oregon Newspapers"
+PROJECT_NAME = "Oregon Digital Newspapers Initiative"
+
+# Make sure it's really obvious when the site is in debug mode
+if Debug:
+    SITE_TITLE = "** DEBUG ** | " + SITE_TITLE
 
 # Relative path from core and theme apps to subdirectory with essay templates.
 # For example: 'essays' will find files in themes/*/templates/essays
