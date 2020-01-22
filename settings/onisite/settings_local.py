@@ -142,7 +142,7 @@ SITE_TITLE = "Historic Oregon Newspapers"
 PROJECT_NAME = "Oregon Digital Newspapers Initiative"
 
 # Make sure it's really obvious when the site is in debug mode
-if Debug:
+if DEBUG:
     SITE_TITLE = "** DEBUG ** | " + SITE_TITLE
 
 # Relative path from core and theme apps to subdirectory with essay templates.
