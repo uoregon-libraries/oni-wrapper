@@ -5,9 +5,8 @@ services:
     volumes:
       - ./docker/mysql/:/etc/mysql/conf.d:Z
   web:
-    volumes:
-      - /dev/null:/etc/openoni.ini
     environment:
       - ONI_DEBUG=1
       - ONI_BASE_URL=http://localhost
+      - ONI_IIIF_URL=http://localhost/images/iiif
       - ONI_SECRET_KEY=foo
