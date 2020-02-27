@@ -1,5 +1,6 @@
 import os
 import urllib
+import logging
 
 ###
 # Custom stuff that doesn't exist in the core settings example
