@@ -10,3 +10,4 @@ services:
       - ONI_BASE_URL=http://localhost
       - ONI_IIIF_URL=http://localhost/images/iiif
       - ONI_SECRET_KEY=foo
+      - ONI_HSTS_SECONDS=0
