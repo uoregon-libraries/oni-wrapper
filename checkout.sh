@@ -8,7 +8,7 @@ set -eu
 # experimenting, otherwise we risk creating an unstable codebase for
 # production.  Note that an env variable can be used for development work,
 # rather than editing this file.
-openoni_checkout=${openoni_checkout:-v1.0.0}
+openoni_checkout=${openoni_checkout:-v1.0.3}
 plugin_featured_content_checkout=${plugin_featured_content_checkout:-v0.5.0}
 plugin_map_checkout=${plugin_map_checkout:-v0.3.0}
 plugin_staticpages_checkout=${plugin_staticpages_checkout:-v3.0.0}
