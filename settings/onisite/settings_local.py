@@ -110,7 +110,6 @@ INSTALLED_APPS = (
     'themes.oregon',
 
     'onisite.plugins.title_locations',
-    'onisite.plugins.featured_content',
     'onisite.plugins.map',
     'onisite.plugins.calendar',
     'core',
