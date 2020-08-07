@@ -26,42 +26,15 @@ run the site in production or development.
 Environment
 ---
 
-In the ONI 0.11 version of Historic Oregon Newspapers, we have to set
-environment variables for sensitive configuration rather than using
-`/etc/openoni.ini`.  The following values *must* be set:
+Modern ONI (0.11 and later) requires sensitive settings to be specified in the
+environment.  We don't do this in production since it's a bare-metal install -
+it's just easier to hack up the settings file directly to put in those values.
+Our internal deploy scripts (generally in `/opt`) handle preserving the
+settings file when one already exists.
 
-- `ONI_BASE_URL`: **Required**, set to the base URL for ONI, such as `https://oregonnews.uoregon.edu`
-- `ONI_DB_ENGINE`: **Required**, generally set to `django.db.backends.mysql`
-- `ONI_DB_HOST`: **Required**, must be set to the database hostname, such as `localhost`
-- `ONI_DB_PORT`: **Required**, generally set to `3306`
-- `ONI_DB_NAME`: **Required**, must be set to the database name, e.g., `openoni`
-- `ONI_DB_USER`: **Required**, must be set to the database user, e.g., `openoni`
-- `ONI_DB_PASSWORD`: **Required**, must be set to the database password, e.g., `p@ssw0rdS3cur3d`
-- `ONI_SOLR_URL`: **Required**, must be set to the full URL to solr, e.g., `http://localhost:8983/solr/openoni`
-- `ONI_SECRET_KEY`: **Required**, must be set to a random key for things like cookie encryption
-
-You may also choose to set `ONI_DEBUG`, but *never* in a production
-environment: ONI errors will result in lots of sensitive information being
-displayed in the web browser.
-
-In a docker-compose world, you might set these up in `docker-compose.override.yml` like so:
-
-```
-version: '2'
-services:
-  web:
-    environment:
-      - ONI_DEBUG=1
-      - ONI_BASE_URL=http://192.168.0.100
-      - ONI_DB_ENGINE=django.db.backends.mysql
-      - ONI_DB_HOST=rdbms
-      - ONI_DB_PORT=3306
-      - ONI_DB_NAME=openoni
-      - ONI_DB_USER=openoni
-      - ONI_DB_PASSWORD=openoni
-      - ONI_SOLR_URL=http://solr:8983/solr/openoni
-      - ONI_SECRET_KEY=foo
-```
+For docker, the various settings will need to be set, but these are already
+pre-set since most of the "secrets" are hard-coded anyway.  ONI's
+docker-compose is set up to work well for development.
 
 Customize Branches
 ---
