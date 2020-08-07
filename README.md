@@ -36,6 +36,20 @@ For docker, the various settings will need to be set, but these are already
 pre-set since most of the "secrets" are hard-coded anyway.  ONI's
 docker-compose is set up to work well for development.
 
+MARC
+---
+
+The subdirectory `marc` contains XML that can be loaded into an ONI site via
+the `load_titles` command.  This isn't automated, so it needs to be run
+manually when necessary.
+
+Some of these files are housed here because they don't exist on the Library of
+Congress Chronicling America site.  Others have minor hacks to offer a better
+presentation to users.
+
+In a disaster recovery scenario, these would need to be loaded into our ONI
+instance before batches load.
+
 Customize Branches
 ---
 
