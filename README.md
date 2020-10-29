@@ -8,6 +8,7 @@ This project is meant to centralize all the elements needed to run ONI for UO's 
 - Oregon-specific theming / HTML overrides
 - Various configuration files
 - Scripts to pull and glue everything together
+- [General documentation](docs/README.md) for the ODNP (Oregon Digital Newspaper Project) as a whole
 
 Setup
 ---
