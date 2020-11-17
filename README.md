@@ -9,6 +9,8 @@ This project is meant to centralize all the elements needed to run ONI for UO's 
 - Various configuration files
 - Scripts to pull and glue everything together
 - [General documentation](docs/README.md) for the ODNP (Oregon Digital Newspaper Project) as a whole
+- The [search test script](search-test) which is invoked regularly to
+  verify the site's most complex task is functioning
 
 Setup
 ---
