@@ -11,7 +11,7 @@ no need to have the Go toolchain in production.  Process:
 
 ```bash
 cd search-test   # if you're not already here
-make                    # or just run "go build" - I'm just really lazy
+make             # or just run "go build" - I'm just really lazy
 ./search-test
 ```
 
