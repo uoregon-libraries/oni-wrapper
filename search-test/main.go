@@ -59,7 +59,7 @@ func main() {
 
 	// Ignore the error from Atoi since the regex already forces digit-only input
 	info.ResultCount, _ = strconv.ParseInt(string(matches[1]), 10, 64)
-	info.Print(os.Stderr)
+	info.Print(os.Stdout)
 }
 
 func randomWords(n int) string {
