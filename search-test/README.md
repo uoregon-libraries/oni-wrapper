@@ -29,5 +29,6 @@ English words, we're guaranteed to have a huge result set.  If it's less than
 100, something went horribly wrong.  Chances are if it's less than 10k,
 something is wrong, but we don't want the cutoff to be too high.
 
-STDERR gets a bit of useful JSON logging which may be handy for more advanced
-monitoring someday, and could be captured to a file in the shorter term.
+STDERR gets a bit of informational logging, and STDOUT gets some more useful
+JSON logging which may be handy for more advanced monitoring someday, and could
+be captured to a file in the shorter term.
