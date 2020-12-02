@@ -32,3 +32,17 @@ something is wrong, but we don't want the cutoff to be too high.
 STDERR gets a bit of informational logging, and STDOUT gets some more useful
 JSON logging which may be handy for more advanced monitoring someday, and could
 be captured to a file in the shorter term.
+
+Sample JSON output (formatted for readability):
+
+```json
+{
+  "Start": "2020-12-02T04:54:15.7078599-08:00",
+  "Error": "",
+  "Success": true,
+  "URL": "https://oregonnews.uoregon.edu/search/pages/results?andtext=&city=&county=&date1=1846-01-01&date2=2020-12-31&frequency=&language=&ortext=squirrel+doll+table+back+corn&phrasetext=&proxdistance=5&proxtext=&rows=20&searchType=advanced",
+  "Words": "squirrel doll table back corn",
+  "ResultCount": 984681,
+  "DurationMillis": 1442
+}
+```
