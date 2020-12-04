@@ -59,7 +59,7 @@ Customize Branches
 Each sub-project has a branch or tag name in `checkout.sh`, but they can be
 overridden via environment variables.  e.g.:
 
-    $ plugin_calendar_checkout=master ./checkout.sh
+    $ plugin_calendar_checkout=main ./checkout.sh
 
     * Getting open-oni/open-oni cloned and checked out
       Cloning open-oni/open-oni.git: Success
@@ -79,7 +79,7 @@ overridden via environment variables.  e.g.:
 
     * Getting open-oni/plugin_calendar cloned and checked out
       Cloning open-oni/plugin_calendar.git: Success
-      Checking out plugin_calendar @ master: Success
+      Checking out plugin_calendar @ main: Success
 
     * Getting open-oni/plugin_title_locations cloned and checked out
       Cloning open-oni/plugin_title_locations.git: Success
@@ -87,7 +87,7 @@ overridden via environment variables.  e.g.:
 
     * Getting uoregon-libraries/oregon-oni cloned and checked out
       Cloning uoregon-libraries/oregon-oni.git: Success
-      Checking out oregon-oni @ master: Success
+      Checking out oregon-oni @ main: Success
 
 This is particularly useful for testing a release branch prior to deployment.
 
@@ -115,7 +115,7 @@ cd oni-wrapper
 
 # Work on the theme
 cd open-oni/themes/oregon/
-git checkout master
+git checkout main
 ```
 
 ### Running via Docker
