@@ -30,7 +30,8 @@ func (s *statusInfo) Print(out io.Writer) {
 
 func (s *statusInfo) get() {
 	s.Start = time.Now()
-	var resp, err = http.Get(s.URL)
+	var c = &http.Client{Timeout: time.Second * 60}
+	var resp, err = c.Get(s.URL)
 	if err != nil {
 		s.Error = fmt.Sprintf("failed: %s", err)
 		return
