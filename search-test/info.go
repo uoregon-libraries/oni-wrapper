@@ -11,13 +11,13 @@ import (
 
 type statusInfo struct {
 	Start          time.Time
-	Error          string
+	Error          string `json:",omitempty"`
 	Success        bool
 	URL            string
 	ResponseBody   []byte `json:"-"`
 	Words          string
-	ResultCount    int64
-	DurationMillis int64
+	ResultCount    int64 `json:",omitempty"`
+	DurationMillis int64 `json:",omitempty"`
 }
 
 func (s *statusInfo) Print(out io.Writer) {
