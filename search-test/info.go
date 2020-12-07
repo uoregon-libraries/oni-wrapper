@@ -15,6 +15,7 @@ type statusInfo struct {
 	Success        bool
 	URL            string
 	ResponseBody   []byte `json:"-"`
+	StatusCode     int    `json:",omitempty"`
 	Words          string
 	ResultCount    int64 `json:",omitempty"`
 	DurationMillis int64 `json:",omitempty"`
@@ -38,6 +39,7 @@ func (s *statusInfo) get() {
 	}
 
 	s.DurationMillis = time.Since(s.Start).Milliseconds()
+	s.StatusCode = resp.StatusCode
 	defer resp.Body.Close()
 	s.ResponseBody, err = ioutil.ReadAll(resp.Body)
 	if err != nil {
