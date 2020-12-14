@@ -53,6 +53,14 @@ presentation to users.
 In a disaster recovery scenario, these would need to be loaded into our ONI
 instance before batches load.
 
+Loading titles is generally trivial:
+
+```bash
+cd /opt/openoni
+source ENV/bin/activate
+./manage.py load_titles /opt/oni-wrapper/marc/
+```
+
 Customize Branches
 ---
 
