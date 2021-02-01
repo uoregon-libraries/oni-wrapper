@@ -41,12 +41,14 @@ func main() {
 
 	info.get()
 	if info.Error != "" {
+		info.StatusCode = -1
 		info.Print(os.Stdout)
 		os.Exit(1)
 	}
 
 	var matches = searchRE.FindSubmatch(info.ResponseBody)
 	if len(matches) != 2 {
+		info.StatusCode = -1
 		info.Error = "no search results found by regexp"
 		info.Print(os.Stdout)
 		os.Exit(1)
