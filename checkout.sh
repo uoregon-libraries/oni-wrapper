@@ -13,7 +13,7 @@ plugin_map_checkout=${plugin_map_checkout:-v0.3.0}
 plugin_staticpages_checkout=${plugin_staticpages_checkout:-v3.0.0}
 plugin_calendar_checkout=${plugin_calendar_checkout:-v0.4.0}
 plugin_title_locations_checkout=${plugin_title_locations_checkout:-v0.2.0}
-oregononi_checkout=${oregononi_checkout:-v2.2.0}
+oregononi_checkout=${oregononi_checkout:-main}
 
 force=0
 if [[ ${1:-} == "--force" ]]; then
