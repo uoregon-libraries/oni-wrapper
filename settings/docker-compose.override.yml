@@ -4,10 +4,3 @@ services:
   rdbms:
     volumes:
       - ./docker/mysql/:/etc/mysql/conf.d:Z
-  web:
-    environment:
-      - ONI_DEBUG=1
-      - ONI_BASE_URL=http://localhost
-      - ONI_IIIF_URL=http://localhost/images/iiif
-      - ONI_SECRET_KEY=foo
-      - ONI_HSTS_SECONDS=0

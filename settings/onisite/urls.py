@@ -1,9 +1,9 @@
-from django.conf.urls import url, include
+from django.urls import include, path, re_path
 
 urlpatterns = [
-    url('', include("themes.oregon.urls")),
-    url(r'^map$', include("onisite.plugins.map.urls")),
-    url('', include("onisite.plugins.calendar.urls")),
-    url('', include("core.urls")),
-    url('', include("onisite.plugins.staticpages.urls")),
+    path('', include("themes.oregon.urls")),
+    re_path(r'^map$', include("onisite.plugins.map.urls")),
+    path('', include("onisite.plugins.calendar.urls")),
+    path('', include("core.urls")),
+    path('', include("onisite.plugins.staticpages.urls")),
 ]
