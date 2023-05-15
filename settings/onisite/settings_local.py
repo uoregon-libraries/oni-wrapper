@@ -50,6 +50,8 @@ CONN_MAX_AGE = 30
 # The first item in the list has final say when collisions occur.
 INSTALLED_APPS = (
     'django.contrib.humanize',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
     'django.contrib.staticfiles',
 
     # Make sure oregon theme files override plugin and core pages
