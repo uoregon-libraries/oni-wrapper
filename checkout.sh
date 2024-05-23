@@ -33,7 +33,7 @@ run_git_command() {
   unset IFS
   if [[ $ok == 0 ]]; then
     echo "[31;1mError[0m"
-    echo
+    echo "> $cmd"
     echo $output
     exit 1
   fi
