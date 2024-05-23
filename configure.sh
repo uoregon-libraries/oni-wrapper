@@ -43,4 +43,5 @@ copyfile settings/onisite/urls.py $dest/onisite/urls.py
 copyfile settings/onisite/settings_local.py $dest/onisite/settings_local.py
 copyfile settings/docker-compose.override.yml $dest/docker-compose.override.yml-development
 copyfile settings/calendar/config.py $dest/onisite/plugins/calendar/config.py
+copyfile settings/sitemap-custom.xml $dest/static/sitemap-custom.xml
 copyfile settings/.env $dest/.env

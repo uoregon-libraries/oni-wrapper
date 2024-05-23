@@ -14,6 +14,7 @@ plugin_staticpages_checkout=${plugin_staticpages_checkout:-v3.0.0}
 plugin_calendar_checkout=${plugin_calendar_checkout:-v0.4.0}
 plugin_title_locations_checkout=${plugin_title_locations_checkout:-v0.2.0}
 oregononi_checkout=${oregononi_checkout:-main}
+onisitemapplugin_checkout=${onisitemapplugin_checkout:-main}
 
 force=0
 if [[ ${1:-} == "--force" ]]; then
@@ -116,6 +117,7 @@ get_oni_plugin map
 get_oni_plugin staticpages
 get_oni_plugin calendar
 get_oni_plugin title_locations
+checkout jechols oni-sitemap-plugin sitemap
 popd >/dev/null
 
 pushd . >/dev/null

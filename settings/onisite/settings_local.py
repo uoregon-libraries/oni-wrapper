@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     # Make sure oregon theme files override plugin and core pages
     'themes.oregon',
 
+    'onisite.plugins.sitemap',
     'onisite.plugins.title_locations',
     'onisite.plugins.map',
     'onisite.plugins.calendar',
