@@ -1,6 +1,0 @@
-# This is a useful base override for using ONI for oregonnews development
-version: '2.1'
-services:
-  rdbms:
-    volumes:
-      - ./docker/mysql/:/etc/mysql/conf.d:Z
