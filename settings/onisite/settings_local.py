@@ -1,9 +1,10 @@
 import os
 import urllib
+
 from .settings_base import *
 
 ###
-# Custom stuff that doesn't exist in the core settings example
+# Extra customizations for HON
 ###
 
 # Where the static pages live for the staticpages plugin
@@ -16,11 +17,8 @@ TIME_ZONE = 'America/Los_Angeles'
 # not whatever BASE_DIR might point to
 STORAGE = os.getenv('ONI_STORAGE_PATH', '/opt/openoni/data/')
 
-# We don't allow SECRET_KEY to have a default
-SECRET_KEY = os.getenv("ONI_SECRET_KEY")
-
 ###
-# Settings example, customized for us
+# Core settings
 ###
 
 # Copy to settings_local.py, update YOUR_ values, and follow our documentation:
@@ -31,9 +29,9 @@ SECRET_KEY = os.getenv("ONI_SECRET_KEY")
 # DJANGO SETTINGS
 ################################################################
 # BASE_URL can NOT include any path elements!
-BASE_URL = os.getenv('ONI_BASE_URL')
+BASE_URL = os.getenv('ONI_BASE_URL', 'http://localhost')
 url = urllib.parse.urlparse(BASE_URL)
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [url.hostname]
 
 if url.scheme == 'https':
     """
@@ -41,18 +39,23 @@ if url.scheme == 'https':
     Test with a low value (e.g. 300)
     before setting a high value (e.g. 31536000) for long-term use
     """
-    SECURE_HSTS_SECONDS = int(os.getenv('ONI_HSTS_SECONDS', 300))
+    SECURE_HSTS_SECONDS = int(os.getenv('ONI_HSTS_SECONDS', 0))
 
 # Keep database connections open until idle for this many seconds
 CONN_MAX_AGE = 30
+# Enable health checks to prevent errors when db closes connections or restarts
+CONN_HEALTH_CHECKS = True
 
 # List of configuration classes / app packages in order of priority high to low.
 # The first item in the list has final say when collisions occur.
 INSTALLED_APPS = (
-    'django.contrib.humanize',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
+    # Default
+    'django.contrib.sessions',
+    'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Humanize and local theme override all below
+    'django.contrib.humanize',  # Makes data more human-readable
 
     # Make sure oregon theme files override plugin and core pages
     'themes.oregon',
